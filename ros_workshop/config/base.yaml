@@ -1,0 +1,4 @@
+# rosaria configuration
+
+port: /dev/ttyUSB0
+tf_prefix: bender
