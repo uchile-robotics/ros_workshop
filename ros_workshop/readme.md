@@ -9,12 +9,12 @@ $ catkin_make
 $ source devel/setup.bash
 $ echo "source ~/workshop_ws/devel/setup.bash" >> ~/.bashrc
 ```
-
 # Configuración git
 ```
+$ cd $HOME
 $ git clone https://github.com/uchile-robotics/ros_workshop.git
 $ cd ros_workshop
-$ ln -s ~/workshop_ws/bender_workshop ~/ros_workshop/src/bender_workshop
+$ ln -s $HOME/ros_workshop/ros_workshop/ $HOME/workshop_ws/src/ros_workshop
 $ # Modificar algún archivo
 $ git status
 $ git commit -a -m "Primer commit"
@@ -22,7 +22,7 @@ $ git commit -a -m "Primer commit"
 
 # Crear package
 ```
-$ cd src
+$ cd $HOME/workshop_ws/src
 $ catkin_create_pkg test_pkg rospy tf std_msgs std_srvs
 ```
 
