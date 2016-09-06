@@ -1,0 +1,11 @@
+<launch>
+  <include file="$(find bender_gazebo)/launch/bender.launch" />
+
+ <include file="$(find bender_gazebo)/launch/controllable_object.launch" >
+    <arg name="object" value="person"/>
+    <arg name="key_teleop" value="true"/>
+  </include>
+
+  <node name="basic_follow" pkg="ros_workshop" type="follow.py" />
+
+</launch>
