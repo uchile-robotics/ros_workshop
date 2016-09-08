@@ -11,9 +11,7 @@ class BaseController(object):
         self.cmd = Twist()
 
     def joy_callback(self, msg):
-        self.cmd.angular.z = msg.axes[0]
-        self.cmd.linear.x = msg.axes[1]
-        self.pub.publish(self.cmd)
+        rospy.loginfo(msg)
 
 def main():
     rospy.init_node('base_controller')
