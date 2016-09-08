@@ -1,0 +1,19 @@
+<launch>
+
+  <!-- Joystick device -->
+  <arg name="joy_dev" default="/dev/input/js0" />
+  <!-- Arduino device -->
+  <arg name="arduino_dev" default="/dev/ttyACM0" />
+
+  <!-- Joy node -->
+  <node respawn="true" pkg="joy" type="joy_node" name="basic_joy">
+    <param name="dev" type="string" value="$(arg joy_dev)" />
+    <param name="deadzone" value="0.5" />
+  </node>
+
+  <!-- rosserial node -->
+  <node pkg="rosserial_python" type="serial_node.py" name="base_arduino" output="screen">
+    <param name="port" type="string" value="$(arg arduino_dev)" />
+  </node>
+
+</launch>
