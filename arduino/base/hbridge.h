@@ -1,25 +1,39 @@
-#include <ros.h>
-#include <geometry_msgs/Twist.h>
-#include "hbridge.h"
+#ifndef HBRIDGE_H
+#define HBRIDGE_H
 
-ros::NodeHandle nh;
-HBridge driver(1,2,3);
+#include <stdint.h>
 
-void messageCb( const geometry_msgs::Twist& cmd){
-  driver.set(-200);
-  delay(500);
-  driver.set(200);
-}
+class HBridge
+{
+private:
+  uint8_t _pinPwm;
+  uint8_t _pinA;
+  uint8_t _pinB;
 
-ros::Subscriber<geometry_msgs::Twist> sub("cmd_vel", &messageCb );
+public:
+  
+  /**
+   * @brief HBridge Class
+   * 
+   * @param pwmPin PWM pin
+   * @param pinA
+   * @param pinB
+   */
+  HBridge(uint8_t pinPwm, uint8_t pinA, uint8_t pinB);
+  
+  void forward();
 
-void setup(){
-  driver.init();
-  nh.initNode();
-  nh.subscribe(sub);
-}
+  void backward();
 
-void loop(){
-  nh.spinOnce();
-  delay(1);
-}
+  void brake();
+
+  void activeBrake();
+
+  void setRawPwm(uint8_t pwm);
+
+  void set(int16_t target);
+
+
+};
+
+#endif
