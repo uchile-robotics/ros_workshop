@@ -6,11 +6,15 @@ ros::NodeHandle nh;
 HBridge leftDriver(9,8,10);
 HBridge rightDriver(6,7,5);
 
+#define SAT(x) ( ((x) > 255) ? 255 : ( ((x) < -255) ? -255 : (x) ) )
 
 void messageCb(const geometry_msgs::Twist& cmd)
 {
-  leftDriver.set(100);
-  rightDriver.set(-100);
+  int32_t leftCmd = cmd.linear.x*255 + cmd.angular.z*255;
+  int32_t rightCmd = cmd.linear.x*255 - cmd.angular.z*255;;
+  
+  leftDriver.set(SAT(leftCmd));
+  rightDriver.set(SAT(rightCmd));
 }
 
 ros::Subscriber<geometry_msgs::Twist> sub("cmd_vel", &messageCb );
@@ -49,4 +53,3 @@ void setTest()
   driver.set(-250);
   delay(1500);
 }
-
