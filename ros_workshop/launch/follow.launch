@@ -8,7 +8,5 @@
     <arg name="key_teleop" value="true"/>
   </include>
 
-  <!-- Follow node -->
-  <node name="basic_follow" pkg="ros_workshop" type="follow.py" />
 
 </launch>
