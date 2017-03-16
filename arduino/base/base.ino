@@ -9,8 +9,14 @@ HBridge rightDriver(6,7,5);
 
 void messageCb(const geometry_msgs::Twist& cmd)
 {
-  leftDriver.set(100);
-  rightDriver.set(-100);
+  int linear=((int)(cmd.linear.x*254));
+  int angular=((int)(cmd.angular.z*254));
+  int linear_vel= (abs(linear)*linear);
+  int angular_vel= (abs(angular)*angular);
+  //if (linear_vel+angular_vel<50){}
+  rightDriver.set(linear + angular);
+  leftDriver.set(linear + angular*(-1));
+  
 }
 
 ros::Subscriber<geometry_msgs::Twist> sub("cmd_vel", &messageCb );
@@ -24,7 +30,7 @@ void setup()
 void loop()
 {
   nh.spinOnce();
-  delay(1);
+  delay(100);
 }
 
 void basicTest()
