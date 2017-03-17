@@ -19,9 +19,10 @@ git clone https://github.com/uchile-robotics/ros_workshop.git
 cd ros_workshop
 ln -s $HOME/ros_workshop/ros_workshop/ $HOME/workshop_ws/src/ros_workshop
 ln -s $HOME/ros_workshop/rosaria/ $HOME/workshop_ws/src/rosaria
-# Modificar algún archivo
-git status
-git commit -a -m "Primer commit"
+#Compile git archives
+cd
+cd workshop_ws
+catkin_make
 ```
 
 # Crear package
