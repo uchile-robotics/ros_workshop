@@ -7,7 +7,7 @@ def main():
     rospy.init_node('test_subscriber')
     rospy.loginfo('test_subscriber')
     # Subscriber for joint states
-    sub = rospy.Subscriber('/bender/joy', Joy, process_callback)
+    sub = rospy.Subscriber('/pepper/joy', Joy, process_callback)
     rospy.spin()
 
 def process_callback(msg):
