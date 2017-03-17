@@ -50,6 +50,7 @@ touch test.py
 chmod +x test.py
 ```
 
-### Recursos útiles para administrar git
+## Recursos útiles
 
 * [github-gem commands](https://github.com/defunkt/github-gem)
+* [maqui installer](https://github.com/uchile-robotics/maqui_system)
