@@ -7,7 +7,7 @@ def main():
     rospy.init_node('test_publisher')
     rospy.loginfo('test_publisher')
     # Base cmd
-    base_pub = rospy.Publisher('/bender/nav/base/cmd_vel', Twist, queue_size=1)
+    base_pub = rospy.Publisher('/pepper_robot/cmd_vel', Twist, queue_size=1)
     # Publish each sec
     rate = rospy.Rate(1)
     msg = Twist()
