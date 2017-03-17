@@ -3,7 +3,6 @@ Source code examples for ROS workshop
 
 # Crear workspace
 ```shell
-
 cd #se accede a HOME
 mkdir -p workshop_ws/src #se crea una carpeta workshop/src
 cd workshop_ws/src #se accede a la nueva carpeta
