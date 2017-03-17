@@ -1,0 +1,8 @@
+<launch>
+	<!-- Gazebo Pepper simulation -->
+	<include file="$(find maqui_sim)/launch/maqui.launch" />
+
+	<!-- launch joy-->
+	<include file="$(find ros_workshop)/launch/joy.launch"/>
+
+</launch>

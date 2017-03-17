@@ -3,23 +3,26 @@ Source code examples for ROS workshop
 
 # Crear workspace
 ```shell
-cd
-mkdir -p workshop_ws/src
-cd workshop_ws/src
-catkin_init_workspace
-cd ..
-catkin_make
-source devel/setup.bash
-echo "source ~/workshop_ws/devel/setup.bash" >> ~/.bashrc
+cd #se accede a HOME
+mkdir -p workshop_ws/src #se crea una carpeta workshop/src
+cd workshop_ws/src #se accede a la nueva carpeta
+catkin_init_workspace #se crea un workspace
+cd .. #volvemos al origen del workspace
+catkin_make #compilamos
+source devel/setup.bash #se agrega el env del nuevo workspace a la consola (se agregan los nuevos comandos)
+echo "source ~/workshop_ws/devel/setup.bash" >> ~/.bashrc 
 ```
 # Configuración git
 ```shell
 cd $HOME
-git clone https://github.com/uchile-robotics/ros_workshop.git
-cd ros_workshop
-ln -s $HOME/ros_workshop/ros_workshop/ $HOME/workshop_ws/src/ros_workshop
+git clone https://github.com/uchile-robotics/ros_workshop.git #se descarga el repositorio
+cd ros_workshop #se abree el root del nuevo repo
+ln -s $HOME/ros_workshop/ros_workshop/ $HOME/workshop_ws/src/ros_workshop # se crean accesos directos del repo en nuestro 
 ln -s $HOME/ros_workshop/rosaria/ $HOME/workshop_ws/src/rosaria
 #Compile git archives
+
+#Se debe acceder al workshop y compilar el nuevo repo
+
 cd
 cd workshop_ws
 catkin_make
@@ -46,3 +49,7 @@ touch test.py
 chmod +x test.py
 ```
 
+## Recursos útiles
+
+* [github-gem commands](https://github.com/defunkt/github-gem)
+* [maqui installer](https://github.com/uchile-robotics/maqui_system)
