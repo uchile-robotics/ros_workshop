@@ -1,28 +1,25 @@
 # ros_workshop
-Source code examples for ROS workshop
+Configuración para el workshop sobre ROS
 
 # Crear workspace
 ```shell
-cd #se accede a HOME
-mkdir -p workshop_ws/src #se crea una carpeta workshop/src
-cd workshop_ws/src #se accede a la nueva carpeta
-catkin_init_workspace #se crea un workspace
-cd .. #volvemos al origen del workspace
-catkin_make #compilamos
-source devel/setup.bash #se agrega el env del nuevo workspace a la consola (se agregan los nuevos comandos)
-echo "source ~/workshop_ws/devel/setup.bash" >> ~/.bashrc 
+cd # se accede a HOME
+mkdir -p workshop_ws/src # se crea una carpeta workshop/src
+cd workshop_ws/src # se accede a la nueva carpeta
+catkin_init_workspace # se crea un workspace (ws)
+cd .. # volvemos root del workspace
+catkin_make # compilamos
+source devel/setup.bash # se agrega el env del nuevo workspace a la consola (se agregan los nuevos comandos)
+echo "source ~/workshop_ws/devel/setup.bash" >> ~/.bashrc # cada vez que se abra la consola se correra el comando
 ```
 # Configuración git
 ```shell
 cd $HOME
-git clone https://github.com/uchile-robotics/ros_workshop.git #se descarga el repositorio
-cd ros_workshop #se abree el root del nuevo repo
-ln -s $HOME/ros_workshop/ros_workshop/ $HOME/workshop_ws/src/ros_workshop # se crean accesos directos del repo en nuestro 
-ln -s $HOME/ros_workshop/rosaria/ $HOME/workshop_ws/src/rosaria
-#Compile git archives
+git clone https://github.com/uchile-robotics/ros_workshop.git # se descarga el repositorio
+cd ros_workshop # se abree el root del repositorio
+ln -s $HOME/ros_workshop/ros_workshop/ $HOME/workshop_ws/src/ros_workshop # se crean accesos directos del repositorio en nuestro ws 
 
-#Se debe acceder al workshop y compilar el nuevo repo
-
+# Se debe acceder al ws y compilar el nuevo repo
 cd
 cd workshop_ws
 catkin_make
