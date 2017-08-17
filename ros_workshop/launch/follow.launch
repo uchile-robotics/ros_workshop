@@ -1,6 +1,6 @@
 <launch>
   <!-- Gazebo Bender simulation -->
-  <include file="$(find bender_core)/launch/gazebo.launch" />
+  <include file="$(find bender_bringup)/launch/gazebo.launch" />
 
   <!-- Basic interactive object using keyboard -->
   <include file="$(find bender_gazebo)/launch/controllable_object.launch" >
