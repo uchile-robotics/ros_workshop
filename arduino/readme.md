@@ -1,5 +1,0 @@
-# Generar librería
-```
-$ 
-```
-
