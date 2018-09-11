@@ -14,14 +14,11 @@ echo "source ~/workshop_ws/devel/setup.bash" >> ~/.bashrc # cada vez que se abra
 ```
 # Configuración git
 ```shell
-cd $HOME
+cd $HOME/workshop_ws/src
 git clone https://github.com/uchile-robotics/ros_workshop.git # se descarga el repositorio
-cd ros_workshop # se abree el root del repositorio
-ln -s $HOME/ros_workshop/ros_workshop/ $HOME/workshop_ws/src/ros_workshop # se crean accesos directos del repositorio en nuestro ws 
 
 # Se debe acceder al ws y compilar el nuevo repo
-cd
-cd workshop_ws
+cd ..
 catkin_make
 ```
 
